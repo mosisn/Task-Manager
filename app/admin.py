@@ -5,6 +5,16 @@ from django.contrib.admin import register, ModelAdmin
 
 @register(Task)
 class TaskAdmin(ModelAdmin):
+    """
+    Admin interface for managing tasks.
+
+    Attributes:
+        list_per_page (int): Number of tasks to display per page.
+        list_filter (tuple): Filters available in the task list.
+        list_editable (tuple): Fields that can be edited directly in the list view.
+        list_display (tuple): Fields to display in the task list.
+    """
+    
     list_per_page = 10
     list_filter = ('status', 'priority')
     list_editable =('status',)
@@ -33,14 +43,17 @@ class TaskAdmin(ModelAdmin):
     )
     
     def mark_completed(self, request, queryset):
+        """Mark selected tasks as completed."""
         queryset.update(status='completed')
     mark_completed.short_description = "Mark selected tasks as completed"
     
     def mark_pending(self, request, queryset):
+        """Mark selected tasks as pending."""
         queryset.update(status='pending')
     mark_pending.short_description = "Mark selected tasks as pending"
     
     def mark_canceled(self, request, queryset):
+        """Mark selected tasks as canceled."""
         queryset.update(status='canceled')
     mark_canceled.short_description = "Mark selected tasks as canceled"
     

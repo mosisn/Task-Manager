@@ -4,6 +4,15 @@ from django.shortcuts import render
 from .models import Task
 
 def task_summary(request):
+    """
+    View to summarize tasks.
+
+    Args:
+        request: The HTTP request object.
+
+    Returns:
+        Rendered HTML response with task statistics.
+    """
     total_tasks = Task.objects.count()
     completed_tasks = Task.objects.filter(status='completed').count()
     pending_tasks = Task.objects.filter(status='pending').count()
