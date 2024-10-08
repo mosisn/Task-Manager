@@ -1,5 +1,4 @@
 from .models import Task
-
 from django.urls import path
 from django.contrib.admin import register, ModelAdmin
 
@@ -7,9 +6,9 @@ from django.contrib.admin import register, ModelAdmin
 @register(Task)
 class TaskAdmin(ModelAdmin):
     list_per_page = 10
-    list_filter = ('status',)
+    list_filter = ('status', 'priority')
     list_editable =('status',)
-    list_display = ('title', 'status', 'due_date')
+    list_display = ('title', 'priority', 'due_date', 'created_at', 'status')
     
     save_on_top = True
     date_hierarchy = 'due_date'
@@ -24,7 +23,7 @@ class TaskAdmin(ModelAdmin):
     
     fieldsets = (
         (None, {
-            'fields': ('title', 'description'),
+            'fields': ('title', 'description', 'priority'),
             'classes' : ('wide',)
         }),
         ('Status', {

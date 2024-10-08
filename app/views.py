@@ -3,7 +3,7 @@ from datetime import timedelta
 from django.shortcuts import render
 from .models import Task
 
-def task_summary(self, request):
+def task_summary(request):
     total_tasks = Task.objects.count()
     completed_tasks = Task.objects.filter(status='completed').count()
     pending_tasks = Task.objects.filter(status='pending').count()
@@ -12,6 +12,9 @@ def task_summary(self, request):
     overdue_tasks = Task.objects.filter(due_date__lt=today).count()
     tasks_due_today = Task.objects.filter(due_date__date=today).count()
     last_week_tasks = Task.objects.filter(created_at__gte=today - timedelta(days=7)).count()
+    low_priority_tasks = Task.objects.filter(priority='low').count()
+    medium_priority_tasks = Task.objects.filter(priority='medium').count()
+    high_priority_tasks = Task.objects.filter(priority='high').count()
 
     context = {
         'total_tasks': total_tasks,
@@ -22,6 +25,9 @@ def task_summary(self, request):
         'tasks_due_today': tasks_due_today,
         'last_week_tasks': last_week_tasks,
         'completion_rate': (completed_tasks / total_tasks * 100) if total_tasks > 0 else 0,
+        'low_priority_tasks': low_priority_tasks,
+        'medium_priority_tasks': medium_priority_tasks,
+        'high_priority_tasks': high_priority_tasks,
     }
     
-    return render(request, 'admin/task_summary.html', context)
+    return render(request, 'summary.html', context)
