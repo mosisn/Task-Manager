@@ -34,14 +34,14 @@ This Django project is a simple task management application that allows users to
 
 ### Create .env file:
 - it should contain:
-- - DATABASE_NAME
-- - DATABASE_PASS
-- - DATABASE_USER
-- - DATABASE_HOST
-- - DATABASE_PORT
-- - SECRET_KEY
-- - ALLOWED_HOSTS
-- - DEBUG
+  - DATABASE_NAME
+  - DATABASE_PASS
+  - DATABASE_USER
+  - DATABASE_HOST
+  - DATABASE_PORT
+  - SECRET_KEY
+  - ALLOWED_HOSTS
+  - DEBUG
 
 
 ### Run migrations:
