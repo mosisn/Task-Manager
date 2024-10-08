@@ -2,8 +2,8 @@ from django.db import models
 
 STATUS_CHOICES = (
     ('pending','pending'),
+    ('completed', 'completed'),
     ('canceled', 'canceled'),
-    ('completed', 'completed')
 )
 
 class Task(models.Model):
