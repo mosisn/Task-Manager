@@ -32,6 +32,17 @@ This Django project is a simple task management application that allows users to
 ### Install dependencies:
 - pip install -r requirements.txt
 
+### Create .env file:
+- it should contain:
+- - DATABASE_NAME
+- - DATABASE_PASS
+- - DATABASE_USER
+- - DATABASE_HOST
+- - DATABASE_PORT
+- - SECRET_KEY
+- - ALLOWED_HOSTS
+- - DEBUG
+
 
 ### Run migrations:
 - python manage.py migrate
