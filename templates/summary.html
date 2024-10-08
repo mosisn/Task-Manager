@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Summary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .task-summary {
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        h2 {
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 5px 0;
+            font-size: 16px;
+        }
+        strong {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="task-summary">
+        <h1>Task Summary</h1>
+        <div class="summary-stats">
+            <h2>Overview</h2>
+            <ul>
+                <li><strong>Total Tasks:</strong> {{ total_tasks }}</li>
+                <li><strong>Completed Tasks:</strong> {{ completed_tasks }}</li>
+                <li><strong>Pending Tasks:</strong> {{ pending_tasks }}</li>
+                <li><strong>Canceled Tasks:</strong> {{ canceled_tasks }}</li>
+                <li><strong>Overdue Tasks:</strong> {{ overdue_tasks }}</li>
+                <li><strong>Tasks Due Today:</strong> {{ tasks_due_today }}</li>
+                <li><strong>Tasks Created Last Week:</strong> {{ last_week_tasks }}</li>
+                <li><strong>Completion Rate:</strong> {{ completion_rate|floatformat:2 }}%</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
