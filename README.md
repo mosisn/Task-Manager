@@ -106,4 +106,5 @@ Contributions are welcome! Please feel free to submit a pull request or open an 
 
 - Django documentation for guidance on building web applications.
 - Open source community for inspiration and support.
-- Chat GPT-4o mini which i used for faster writing of comments, documentation and debugging. 
+- Chat GPT-4o mini which i used for faster writing of comments, documentation and debugging.
+- Chat GPT-4o mini was used in writing of the project template and i had no revision or role in it's developement. 
