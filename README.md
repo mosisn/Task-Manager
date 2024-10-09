@@ -64,7 +64,7 @@ This Django project is a simple task management application that allows users to
 
 - **Adding Tasks**: Navigate to the admin panel to add new tasks.
 - **Managing Tasks**: You can edit task statuses directly from the admin interface.
-- **Viewing Summary**: Visit http://127.0.0.1:8000/task-summary/ to view a summary of all tasks.
+- **Viewing Summary**: http://127.0.0.1:8000/admin/app/task/summary/ to view a summary of all tasks.
 
 ## Task Model
 
